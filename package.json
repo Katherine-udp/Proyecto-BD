@@ -1,0 +1,32 @@
+{
+  "name": "stockmanagement",
+  "version": "0.0.0",
+  "description": "Proyecto para el ramo de Bases de Datos que se realizó para el primer semestre de 2021",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Katherine-udp/Proyecto-BD.git"
+  },
+  "keywords": [
+    "DB",
+    "Basesdedatos",
+    "psql",
+    "sql",
+    "postgresql",
+    "express",
+    "nodejs"
+  ],
+  "author": "Katherine Huidobro",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Katherine-udp/Proyecto-BD/issues"
+  },
+  "homepage": "https://github.com/Katherine-udp/Proyecto-BD#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
+  }
+}
