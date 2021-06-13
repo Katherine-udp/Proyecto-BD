@@ -2,9 +2,9 @@
   "name": "stockmanagement",
   "version": "0.0.0",
   "description": "Proyecto para el ramo de Bases de Datos que se realizó para el primer semestre de 2021",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev":"nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
