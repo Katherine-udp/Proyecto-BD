@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 //Routes
-app.use(require('./routes/index'))
+app.use(require('./routes/index'));
 
 //lectura de datos
 const prod_list = 'select * from productos;'

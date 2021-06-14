@@ -4,7 +4,7 @@
   "description": "Proyecto para el ramo de Bases de Datos que se realizó para el primer semestre de 2021",
   "main": "src/app.js",
   "scripts": {
-    "dev":"nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Katherine-udp/Proyecto-BD#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "pg": "^8.6.0"
   },
   "devDependencies": {
