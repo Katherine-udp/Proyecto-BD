@@ -9,8 +9,8 @@ const pool = new Pool({
 });
 
 const getProds = async (req,res)=>{
-    const response = await pool.query('select * from productos;')
-    res.status(200).json(response.rows);
+    const response = await pool.query('select * from productos order by codigo asc;')
+    res.json(response.rows);
 }
 const setProds = async (req,res)=>{
     const {codigo,nombre,precio,costo,stock} = req.body;
