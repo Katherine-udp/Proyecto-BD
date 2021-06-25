@@ -12,13 +12,13 @@
                 <th scope ="col">precio</th>
             </tr>
         </thead>
-  
-    <% for(var i=0; i<response.length; i++) {%>
-        <tr>
-          <td><%= response[i].nombre %></td>
-          <td><%= response[i].precio %></td>
-        </tr>
-        <% } %>
+        <% for(var i=0; i < prods.length; i++) { %>
+            <tr>
+              <td><%= prods[i].codigo %></td>
+              <td><%= prods[i].nombre %></td>
+            </tr>
+         <% } %>
      </table>
+     
 </body>
 </html>
