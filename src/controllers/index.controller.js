@@ -57,7 +57,7 @@ const costos = function(req,res){
   })
 } 
 const ventas = function(req,res){
-  sql = 'select boletas.codigo,total_compra,trabajadores.nombre as vendedor,ARRAY_AGG(productos.nombre) as arr_nombre,ARRAY_AGG(cantidad) as arr_cantidad,ARRAY_AGG(productos.precio) as arr_precio from boletas,detalles,productos,trabajadores where trabajadores.rut_trabajadores=boletas.rut_trabajador and boletas.codigo=detalles.codigo_boleta and productos.codigo=detalles.codigo_producto group by boletas.codigo,total_compra,trabajadores.nombre order by codigo;';
+  sql = 'select boletas.codigo,total_compra as total,trabajadores.nombre as vendedor,ARRAY_AGG(productos.nombre) as arr_nombre,ARRAY_AGG(cantidad) as arr_cantidad,ARRAY_AGG(productos.precio) as arr_precio from boletas,detalles,productos,trabajadores where trabajadores.rut_trabajadores=boletas.rut_trabajador and boletas.codigo=detalles.codigo_boleta and productos.codigo=detalles.codigo_producto group by boletas.codigo,total_compra,trabajadores.nombre order by codigo;';
   pool.query(sql,(error,results)=>{
     if (error) {
         console.log(error.stack)

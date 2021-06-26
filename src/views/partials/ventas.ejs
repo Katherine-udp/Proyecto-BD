@@ -15,27 +15,9 @@
                     <tr>
                         <td><%= ventas[i].codigo %></td>
                         <td><%= ventas[i].vendedor %></td>
-                        <td><%= ventas[i].total_compra %></td>
+                        <td><%= ventas[i].total %></td>
                         
-                        <table class = "mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope = "col">Nombre</th>
-                                    <th scope = "col">Precio</th>
-                                    <th scope = "col">Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--ESTA WEA NO FUNCIONA AAAAAAAAAAAAAAAAAAAAAAAA COMO SE HACE UNA TABLA DENTRO DE OTRA TABLA EN BOOTSTRAP-->
-                                <% for(var j=0;j < ventas[i].arr_nombre.length;j++){ %>
-                                    <tr>
-                                        <td><% ventas[i].arr_nombre[j] %></td>
-                                        <td><% ventas[i].arr_precio[j] %></td>
-                                        <td><% ventas[i].arr_cantidad %></td>
-                                    </tr>
-                                <% } %>
-                            </tbody>
-                        </table>
+                        
                     </tr>
                 <% } %>
                 </tbody>
