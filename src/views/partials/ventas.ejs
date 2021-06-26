@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <%- include("header.ejs") %>
+    <body>
+        <div class ="container">
+            <table class = "table" id = "sortTable">
+                <thead>
+                    <tr>
+                        <th scope ="col">Codigo</th>
+                        <th scope ="col">Vendedor</th>
+                        <th scope ="col">Total</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0; i < ventas.length; i++) { %>
+                    <tr>
+                        <td><%= ventas[i].codigo %></td>
+                        <td><%= ventas[i].vendedor %></td>
+                        <td><%= ventas[i].total_compra %></td>
+                        
+                        <table class = "mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope = "col">Nombre</th>
+                                    <th scope = "col">Precio</th>
+                                    <th scope = "col">Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--ESTA WEA NO FUNCIONA AAAAAAAAAAAAAAAAAAAAAAAA COMO SE HACE UNA TABLA DENTRO DE OTRA TABLA EN BOOTSTRAP-->
+                                <% for(var j=0;j < ventas[i].arr_nombre.length;j++){ %>
+                                    <tr>
+                                        <td><% ventas[i].arr_nombre[j] %></td>
+                                        <td><% ventas[i].arr_precio[j] %></td>
+                                        <td><% ventas[i].arr_cantidad %></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script>
+        $('#sortTable').DataTable();
+    </script>
+    <!--Falta hacer e integrar la funcion que muestre la relación de ventas con respecto al mes anterior-->
+</html>

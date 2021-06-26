@@ -1,6 +1,5 @@
 //paquetes
 const express = require('express');
-const { getProds,displayHome } = require('./controllers/index.controller');
 const app = express()
 const port = 3000
 const path = require('path');
