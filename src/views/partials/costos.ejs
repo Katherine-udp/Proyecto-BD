@@ -1,13 +1,18 @@
 <!DOCTYPE html>
     <%- include("header.ejs") %>
     <body>
+        <title>Stock Management | Costos</title>
         <div class ="container">
-            <table class = "table">
+            <table>
+                
+            </table>
+            <table class = "table table-striped table-bordered" id = "sortTable">
                 <thead>
                     <tr>
                         <th scope ="col">codigo</th>
                         <th scope ="col">nombre</th>
                         <th scope ="col">precio</th> 
+                        <th scope ="col">costo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -16,11 +21,72 @@
                         <td><%= prods[i].codigo %></td>
                         <td><%= prods[i].nombre %></td>
                         <td><%= prods[i].precio %></td>
+                        <td><%= prods[i].costo  %></td>
                     </tr>
                 <% } %>
                 </tbody>
             </table>
         </div>
+     <form method="post" action="/costos" class="container" > 
+	    
+        <div class="form-group row ">    
+            <div class="col-xs-2">
+                <label for="ex1">Nombre Producto</label>
+                <input class="form-control" name="nombre" id="ex1" type="text">
+            </div>
+    
+            <div class="col-xs-2">
+                <label for="ex1">Precio</label>
+                <input class="form-control" name="precio" id="ex1" type="text">
+            </div>	
+    
+            <div class="col-xs-2">
+                <label for="ex1">Costo</label>
+                <input class="form-control" name="costo" id="ex1" type="text">
+            </div>
+            
+            <div class="col-xs-2">
+                <label for="ex1">Stock</label>
+                <input class="form-control" name="stock" id="ex1" type="text">
+            </div>
+
+        </div>
+
+	<div class="button-pad">
+	<button class="btn btn-dark mt-3" type="submit">Submit</button>
+	</div>
+
+    <!-- <form id= "delete" action="/costos" method="delete">
+
+          <div>
+            <label for ="ex1">Eliminar Producto</label>
+            <input type="number" name="codigo" id="ex1" class"form-control" >
+            <button id="delete" type="submit">Eliminar</button> 
+          </div>  
+      </form>
+
+      
+<p><form method="POST" action="/costos/{{codigo}}?_method=DELETE">
+	<input class="form-control" name="codigo" id="$1" type="text"/>
+    <button type="submit">Delete</button>
+</form></p>
+
+        <script type='text/javascript'>
+            $('delete').on('click', function(e) {
+               e.preventDefault();
+               console.log(codigo);
+               $.ajax({
+                 type: 'POST',
+                 url: '/costos/' + codigo,
+                 success: function(){
+                   console.log(":DDD");
+                 }
+               });
+	       });</script>-->
+
+	<script>
+            $('#sortTable').DataTable();
+        </script>
         <!-- falta crear la funcion que entregue la wea que mas se vendio-->
     </body>
 </html>

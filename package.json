@@ -4,7 +4,7 @@
   "description": "Proyecto para el ramo de Bases de Datos que se realizó para el primer semestre de 2021",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon -e js,ejs,html src/index.js"
   },
   "repository": {
     "type": "git",

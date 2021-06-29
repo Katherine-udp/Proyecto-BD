@@ -1,8 +1,18 @@
 <!DOCTYPE html>
     <%- include("header.ejs") %>
     <body>
+        <title>Stock Management | Ventas</title>
         <div class ="container">
-            <table class = "table" id = "sortTable">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">PRODUCTO MAS VENDIDO</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><p id="mes"></p></h6>
+                    <p class="card-text">asd</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            <table class = "table table-striped table-bordered" >
                 <thead>
                     <tr>
                         <th scope ="col">Codigo</th>
@@ -16,16 +26,28 @@
                         <td><%= ventas[i].codigo %></td>
                         <td><%= ventas[i].vendedor %></td>
                         <td><%= ventas[i].total %></td>
-                        
-                        
+                    </tr>
+                    <tr>
+                        <th>Productos:</th>
+                        <td> 
+                            <% for (var j=0;j < ventas[i].arr_cantidad.length;j++) { %>
+                                <p style="color:red-300;"> <%= ventas[i].arr_cantidad[j] %> x <%= ventas[i].arr_nombre[j] %> </p>
+                            <% } %>
+                        </td>
+                        <td> 
+                            <% for (var j=0;j < ventas[i].arr_cantidad.length;j++) { %>
+                                <p style="color:red-300;"> <%= ventas[i].arr_cantidad[j] %> x <%= ventas[i].arr_precio[j] %> </p>
+                            <% } %>
+                        </td>
                     </tr>
                 <% } %>
                 </tbody>
             </table>
         </div>
+
     </body>
-    <script>
-        $('#sortTable').DataTable();
-    </script>
-    <!--Falta hacer e integrar la funcion que muestre la relación de ventas con respecto al mes anterior-->
+        <script>
+            const d = new Date();
+            document.getElementById("mes").innerHTML = d.getMonth() + 1;
+        </script>
 </html>

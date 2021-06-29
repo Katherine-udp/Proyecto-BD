@@ -1,11 +1,14 @@
-const { Router, response } = require('express');
+const { Router } = require('express');
 const router = Router();
-const { getProds,setProds, bodega,getProd,costos,ventas } = require('../controllers/index.controller')
+const { getProds,updateProds,getProd,costos,ventas,bodega,createProduct } = require('../controllers/index.controller')
 router.get('/prods',getProds);
 router.get('/prods/:id',getProd);
-router.post('/prods',setProds);
+//router.post('/costos', createProduct)
+//router.delete('/costos/:codigo',deleteproduct);
+
 
 router.get('/costos',costos);
 router.get('/ventas',ventas);
 router.get('/',bodega);
+router.post('/',updateProds);
 module.exports = router;
