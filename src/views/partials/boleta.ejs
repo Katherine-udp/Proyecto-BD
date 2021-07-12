@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<%- include("header.ejs") %>
+
+<body>
+
+	<title>Stock Management | Boleta</title>
+
+
+<div class ="container">
+
+	<h1 class="title">Ingreso de Boletas</h1>
+
+       <form action="/boleta" class="form-container">
+	  <div class="form-row">
+	    <div class="form-group col-md-6">
+	      <label for="rut_trabajador">Rut del trabajador</label>
+	      <input type="text" class="form-control" id="rut_trabajador" placeholder="12.345.567-8">
+	    </div>  
+	    <div class="form-group col-md-2">
+	      <label for="hora">Fecha</label>
+	      <input type="text" class="form-control" id="hora">
+	  </div>
+	</div>
+	   
+	<div class="form-group col-md-6">
+	      <label for="total_compra">Total de la compra</label>
+	      <input type="number" class="form-control" id="total_compra" placeholder="1000">
+        </div>
+
+	  <div class="form-row">
+	    <div class="form-group col-md-6">
+		    <label for="codigo_producto">Producto Comprado</label>
+	      <input type="number" class="form-control" id="codigo_producto" placeholder="id producto">
+	    </div>
+	    <div class="form-group col-md-2">
+	      <label for="cantidad">Cantidad</label>
+	      <input type="number" class="form-control" id="cantidad">
+	    </div>
+	  </div>
+<a href="/boleta">
+   <button class="btn btn-dark">Aceptar</button>
+</a>
+	  
+
+       </form>
+	</div>	
+
+
+</body>
+
+
+</html>

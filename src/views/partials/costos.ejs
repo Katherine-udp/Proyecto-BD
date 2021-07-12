@@ -2,7 +2,11 @@
     <%- include("header.ejs") %>
     <body>
         <title>Stock Management | Costos</title>
-        <div class ="container">
+        <div class ="table-container">
+
+
+	<h1  class="title">Tabla de productos</h1>
+
             <table>
                 
             </table>
@@ -19,7 +23,10 @@
                 <% for(var i=0; i < prods.length; i++) { %>
                     <tr>
                         <td><%= prods[i].codigo %></td>
-                        <td><%= prods[i].nombre %></td>
+                        <td>
+                            <p><%= prods[i].nombre %></p>
+                            <a href="/delete/<%=prods[i].codigo %>" class="btn btn-outline-danger">ELIMINAR</a>
+                        </td>
                         <td><%= prods[i].precio %></td>
                         <td><%= prods[i].costo  %></td>
                     </tr>
@@ -27,8 +34,11 @@
                 </tbody>
             </table>
         </div>
-     <form method="post" action="/costos" class="container" > 
-	    
+
+	<h2 class="title">Agregar Producto</h2>
+
+     <form method="post"  class= "form-container" > 
+	
         <div class="form-group row ">    
             <div class="col-xs-2">
                 <label for="ex1">Nombre Producto</label>
@@ -55,38 +65,9 @@
 	<div class="button-pad">
 	<button class="btn btn-dark mt-3" type="submit">Submit</button>
 	</div>
-
-    <!-- <form id= "delete" action="/costos" method="delete">
-
-          <div>
-            <label for ="ex1">Eliminar Producto</label>
-            <input type="number" name="codigo" id="ex1" class"form-control" >
-            <button id="delete" type="submit">Eliminar</button> 
-          </div>  
-      </form>
-
-      
-<p><form method="POST" action="/costos/{{codigo}}?_method=DELETE">
-	<input class="form-control" name="codigo" id="$1" type="text"/>
-    <button type="submit">Delete</button>
-</form></p>
-
-        <script type='text/javascript'>
-            $('delete').on('click', function(e) {
-               e.preventDefault();
-               console.log(codigo);
-               $.ajax({
-                 type: 'POST',
-                 url: '/costos/' + codigo,
-                 success: function(){
-                   console.log(":DDD");
-                 }
-               });
-	       });</script>-->
-
-	<script>
+	    <script> 
             $('#sortTable').DataTable();
         </script>
-        <!-- falta crear la funcion que entregue la wea que mas se vendio-->
+
     </body>
 </html>
